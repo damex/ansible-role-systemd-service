@@ -1,0 +1,7 @@
+---
+- name: ensure systemd
+  block:
+    - include_tasks: systemd_service.yml
+      when: systemd_service_name
+  tags:
+    - systemd-service
