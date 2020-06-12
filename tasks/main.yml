@@ -1,5 +1,5 @@
 ---
-- name: ensure systemd
+- name: ensure systemd service
   block:
     - include_tasks: systemd_service.yml
       when: systemd_service_name
