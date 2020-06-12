@@ -1,0 +1,4 @@
+---
+- fail:
+    msg: "Please make sure that systemd_service_name is set!"
+  when: not systemd_service_name

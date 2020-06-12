@@ -1,7 +1,7 @@
 ---
 - name: ensure systemd service
   block:
+    - include_tasks: prerequisites.yml
     - include_tasks: systemd_service.yml
-      when: systemd_service_name
   tags:
     - systemd-service
