@@ -11,6 +11,13 @@
     state: "{{ systemd_service_state }}"
   become: true
 
+- name: ensure systemd service is reloaded
+  systemd:
+    name: "{{ systemd_service_name }}"
+    state: "reloaded"
+  when: systemd_service_reload_on
+  become: true
+
 - name: ensure systemd service is restarted
   systemd:
     name: "{{ systemd_service_name }}"
