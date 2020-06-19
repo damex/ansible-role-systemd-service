@@ -1,26 +1,26 @@
 ---
-- name: ensure systemd service is enabled
-  systemd:
-    name: "{{ systemd_service_name }}"
-    enabled: "{{ systemd_service_enabled }}"
-  become: true
+- name: ensure systemd service
+  block:
+    - name: ensure systemd service is enabled
+      systemd:
+        name: "{{ systemd_service_name }}"
+        enabled: "{{ systemd_service_enabled }}"
 
-- name: ensure systemd service is started
-  systemd:
-    name: "{{ systemd_service_name }}"
-    state: "{{ systemd_service_state }}"
-  become: true
+    - name: ensure systemd service is started
+      systemd:
+        name: "{{ systemd_service_name }}"
+        state: "{{ systemd_service_state }}"
 
-- name: ensure systemd service is reloaded
-  systemd:
-    name: "{{ systemd_service_name }}"
-    state: "reloaded"
-  when: systemd_service_reload_on
-  become: true
+    - name: ensure systemd service is reloaded
+      systemd:
+        name: "{{ systemd_service_name }}"
+        state: "reloaded"
+      when: systemd_service_reload_on
 
-- name: ensure systemd service is restarted
-  systemd:
-    name: "{{ systemd_service_name }}"
-    state: "restarted"
-  when: systemd_service_restart_on
+    - name: ensure systemd service is restarted
+      systemd:
+        name: "{{ systemd_service_name }}"
+        state: "restarted"
+      when: systemd_service_restart_on
   become: true
+  when: systemd_service_name | length > 0
