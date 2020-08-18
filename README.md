@@ -1,6 +1,6 @@
 # ansible systemd-service role
 
-[![Build Status](https://travis-ci.com/damex/ansible-role-systemd-service.svg?branch=master)](https://travis-ci.com/damex/ansible-role-systemd-service)
+[![linting](https://github.com/damex/ansible-role-systemd-service/workflows/linting/badge.svg)](https://github.com/damex/ansible-role-systemd-service/actions)
 
 The systemd-service role is designed to be used with `Debian Buster` distributive.
 
