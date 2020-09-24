@@ -1,8 +1,8 @@
 ---
 galaxy_info:
-  role_name: systemd-service
+  role_name: systemd_service
   author: Roman Kuzmitskii
-  description: systemd-service role
+  description: systemd service role
   license: GPLv2
   min_ansible_version: 2.10
   galaxy_tags:
