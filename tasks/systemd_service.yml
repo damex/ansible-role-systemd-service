@@ -2,23 +2,23 @@
 - name: ensure systemd service
   block:
     - name: ensure systemd service is enabled
-      systemd:
+      ansible.builtin.systemd:
         name: "{{ systemd_service_name }}"
         enabled: "{{ systemd_service_enabled }}"
 
     - name: ensure systemd service is started
-      systemd:
+      ansible.builtin.systemd:
         name: "{{ systemd_service_name }}"
         state: "{{ systemd_service_state }}"
 
     - name: ensure systemd service is reloaded
-      systemd:
+      ansible.builtin.systemd:
         name: "{{ systemd_service_name }}"
         state: "reloaded"
       when: systemd_service_reload_on
 
     - name: ensure systemd service is restarted
-      systemd:
+      ansible.builtin.systemd:
         name: "{{ systemd_service_name }}"
         state: "restarted"
       when: systemd_service_restart_on

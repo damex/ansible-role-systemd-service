@@ -2,7 +2,7 @@
 
 [![linting](https://github.com/damex/ansible-role-systemd-service/workflows/linting/badge.svg)](https://github.com/damex/ansible-role-systemd-service/actions)
 
-The systemd-service role is designed to be used with `Debian Buster` distributive.
+The systemd-service role is designed to be used with `Debian Buster` and `Ubuntu Focal` distributives.
 
 `Ansible Galaxy` users can add systemd-service role using the following command:
 
